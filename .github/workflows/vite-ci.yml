@@ -1,4 +1,4 @@
-name: Vite CI
+name: Vite CI React Build
 
 on:
   - branches: [main]
