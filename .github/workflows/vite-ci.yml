@@ -1,8 +1,11 @@
 name: Vite CI React Build
 
 on:
-  - branches: [main]
-  - pull-request: [main]
+  push:
+    branches: [main]
+  
+  pull-request:
+    branches: [main]
 
 jobs:
   say-hello:
