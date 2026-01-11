@@ -10,7 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  
+
 jobs:
   build-react-zustand:
     runs-on: ubuntu-latest
@@ -48,6 +48,11 @@ jobs:
           name: vite-build
           path: dist
           retention-days: 7
+      
+      - name: ✅ Upload Github page artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
   
   deploy:
     needs: build-react-zustand
