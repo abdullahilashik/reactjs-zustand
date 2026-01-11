@@ -11,8 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-jobs:
+jobs:  
   build-react-zustand:
+    if: vars.BUILD_ENABLED != 'false'
     runs-on: ubuntu-latest
     steps:
       - name: 📢 Echo
