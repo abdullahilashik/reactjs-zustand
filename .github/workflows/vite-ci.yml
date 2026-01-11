@@ -1,0 +1,12 @@
+name: Vite CI
+
+on:
+  - branches: [main]
+  - pull-request: [main]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📢 Echo
+        run: 'echo "My name is ashik"'
