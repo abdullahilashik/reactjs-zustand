@@ -28,3 +28,6 @@ jobs:
 
       - name: 🤖 Build react project
         run: npm run build
+
+      - name: 📋 List Build Output
+        run: ls -la dist
