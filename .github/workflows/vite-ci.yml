@@ -43,3 +43,16 @@ jobs:
         with:
           name: vite-build
           path: dist
+          retention-days: 7
+  
+  deploy:
+    needs: build-react-zustand
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4
