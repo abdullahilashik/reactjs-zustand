@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  say-hello:
+  build-react-zustand:
     runs-on: ubuntu-latest
     steps:
       - name: 📢 Echo
@@ -25,6 +25,12 @@ jobs:
       
       - name: 🔬 Dependencies
         run: npm ci
+      
+      - name: 🔍 Linting
+        run: npm run lint
+
+      - name: 🏁 Type Checking
+        run: npx tsc --noEmit
 
       - name: 🤖 Build react project
         run: npm run build
