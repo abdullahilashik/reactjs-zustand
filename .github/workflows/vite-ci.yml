@@ -57,7 +57,7 @@ jobs:
         with:
           path: dist
   
-  deploy:
+  deploy:    
     needs: build-react-zustand
     runs-on: ubuntu-latest
     environment:
