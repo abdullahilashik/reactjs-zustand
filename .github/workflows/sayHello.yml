@@ -6,5 +6,5 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Say My Name
-        run: echo "Say my name nigge!"
+      - name: 📢 Say My Name
+        run: echo "My name is Ashik"
