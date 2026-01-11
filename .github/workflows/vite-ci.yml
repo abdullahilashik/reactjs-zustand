@@ -37,3 +37,9 @@ jobs:
 
       - name: 📋 List Build Output
         run: ls -la dist
+      
+      - name: ☁️ Upload artifects
+        run: actions/upload-artifects@v4
+        with:
+          name: vite-build
+          path: dist
