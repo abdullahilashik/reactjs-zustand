@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: 📢 Echo
         run: 'echo "My name is ashik"'
+      
+      - name: 🏃 Checkout into runner
+        run: actions/checkout@v4
+      
+      - name: ⚙️ Setup nodejs
+        run: actions/setup-node@v4
+      
+      - name: 🤖 Build react project
+        run: npm run dev
