@@ -1,1 +1,10 @@
 name: Say Hello Github Action
+
+on: push
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say My Name
+        run: echo "Say my name nigge!"
