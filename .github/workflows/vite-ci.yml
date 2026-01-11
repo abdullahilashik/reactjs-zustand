@@ -13,6 +13,8 @@ permissions:
 
 jobs:  
   build-react-zustand:
+    environment:
+      name: project-environment
     if: vars.BUILD_ENABLED != 'false'
     runs-on: ubuntu-latest
     steps:
