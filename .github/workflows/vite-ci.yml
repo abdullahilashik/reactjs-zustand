@@ -12,10 +12,16 @@ jobs:
         run: 'echo "My name is ashik"'
       
       - name: 🏃 Checkout into runner
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       
       - name: ⚙️ Setup nodejs
-        run: actions/setup-node@v4
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
       
+      - name: 🔬 Dependencies
+        run: npm ci
+
       - name: 🤖 Build react project
-        run: npm run dev
+        run: npm run build
