@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 jobs:  
-  build-react-zustand:
+  build:
     environment:
       name: project-configuration
     if: ${{ vars.BUILD_ENABLED != 'false' }}
@@ -58,7 +58,8 @@ jobs:
           path: dist
   
   deploy:    
-    needs: build-react-zustand
+    if: github.ref == 'refs/heads/main'
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -67,4 +68,16 @@ jobs:
     steps:
       - name: Deploy to github pages
         id: deployment
+        uses: actions/deploy-pages@v4
+
+  preview:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: preview-pr-${{ github.event.pull_request.number }}
+    
+    steps:
+      - name: Deploy Preview
         uses: actions/deploy-pages@v4
