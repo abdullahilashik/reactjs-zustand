@@ -15,7 +15,7 @@ jobs:
   build-react-zustand:
     environment:
       name: project-configuration
-    if: vars.BUILD_ENABLED != 'false'
+    if: ${{ vars.BUILD_ENABLED != 'false' }}
     runs-on: ubuntu-latest
     steps:
       - name: 📢 Echo
